@@ -1,0 +1,76 @@
+# Data Dictionary
+
+## Overview
+
+This document defines the variables contained in the initial community energy infrastructure dataset.
+
+Each variable is classified as supplied, inferred, calculated or awaiting collection.
+
+## 1. Existing Dataset Variables
+
+| Variable | Description | Unit | Status |
+|---|---|---|---|
+| Community Label | Original community identification label | Text | Supplied |
+| Community Name | Standardized community name | Text | Inferred |
+| Design Round | Design month and year extracted from label | Date | Inferred |
+| Average Daily Load | Average daily electrical load figure | Wh | Supplied; unit basis unconfirmed |
+| Total PV Capacity | Total solar photovoltaic capacity | kWp | Supplied |
+| MPPT Capacity | Maximum power point tracking capacity | kW | Supplied |
+| Battery Capacity | Total battery storage capacity | kWh | Supplied |
+| Inverter Capacity | Total inverter power capacity | kW | Supplied |
+
+## 2. Calculated Variables
+
+| Variable | Calculation | Unit |
+|---|---|---|
+| Battery per kWp PV | Battery Capacity / PV Capacity | kWh/kWp |
+| Inverter per kWp PV | Inverter Capacity / PV Capacity | kW/kWp |
+| MPPT per kWp PV | MPPT Capacity / PV Capacity | kW/kWp |
+
+## 3. Variables Awaiting Collection
+
+| Variable | Description | Unit |
+|---|---|---|
+| LGA | Local Government Area | Text |
+| State | Nigerian state | Text |
+| Latitude | Geographic latitude | Decimal degrees |
+| Longitude | Geographic longitude | Decimal degrees |
+| Households | Approximate number of households | Count |
+| Grid Connected | Whether the community has grid access | Yes/No/Partial |
+| Average Daily Grid Hours | Average daily electricity availability | Hours |
+| Primary Backup | Main alternative electricity source | Text |
+| Actual PV Generation | Measured daily solar generation | kWh/day |
+| Actual Energy Consumption | Measured daily electricity consumption | kWh/day |
+
+## 4. Measurement Notes
+
+### Wh and kWh
+
+Watt-hours and kilowatt-hours measure electrical energy.
+
+1 kWh = 1,000 Wh.
+
+The measurement basis of the supplied average daily load figures has not yet been confirmed.
+
+### kW and kWp
+
+Kilowatts (kW) measure power capacity.
+
+Kilowatt-peak (kWp) describes the rated peak power of a solar photovoltaic array under standard test conditions.
+
+These units should not be treated as interchangeable.
+
+### Battery Capacity
+
+Battery capacity is expressed in kilowatt-hours (kWh).
+
+The supplied values represent nominal capacity unless otherwise confirmed.
+
+They do not independently establish usable battery capacity or actual storage performance.
+
+## 5. Data Classification
+
+- Supplied: Directly transcribed from available source information.
+- Inferred: Interpreted from existing labels or descriptions.
+- Calculated: Derived mathematically from supplied information.
+- To collect: Information not currently available.
